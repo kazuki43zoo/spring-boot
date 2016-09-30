@@ -67,8 +67,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author Stephane Nicoll
  */
 @RunWith(SpringRunner.class)
-@DirtiesContext
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+//@DirtiesContext
+//@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class BasicErrorControllerIntegrationTests {
 
 	private ConfigurableApplicationContext context;
@@ -204,7 +204,7 @@ public class BasicErrorControllerIntegrationTests {
 
 	private void load(String... arguments) {
 		List<String> args = new ArrayList<String>();
-		args.add("--server.port=-1");
+		args.add("--server.port=0");
 		if (arguments != null) {
 			args.addAll(Arrays.asList(arguments));
 		}
