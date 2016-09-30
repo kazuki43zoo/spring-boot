@@ -12,4 +12,6 @@ sudo: false
 #sudo: required
 install: true
 before_script: travis_wait 45 ./mvnw install -q -U -DskipTests=true -Pfast -Dmaven.test.redirectTestOutputToFile=true
-script: ./mvnw install -q -nsu -Dmaven.test.redirectTestOutputToFile=true -P '!integration'
+script:
+  - ./mvnw install -q -nsu -Dmaven.test.redirectTestOutputToFile=true -P '!integration'
+  - cat ./spring-boot-autoconfigure/target/surefire-reports/org.springframework.boot.autoconfigure.web.BasicErrorControllerIntegrationTests-output.txt
