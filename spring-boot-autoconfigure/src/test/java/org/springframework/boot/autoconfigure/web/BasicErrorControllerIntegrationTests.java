@@ -17,7 +17,6 @@
 package org.springframework.boot.autoconfigure.web;
 
 import java.net.URI;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -29,9 +28,9 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.junit.After;
-import org.junit.BeforeClass;
+//import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
+//import org.junit.runner.RunWith;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
@@ -48,7 +47,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 //import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.junit4.SpringRunner;
+//import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -68,17 +67,12 @@ import static org.assertj.core.api.Assertions.assertThat;
  * @author Dave Syer
  * @author Stephane Nicoll
  */
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 //@DirtiesContext
 //@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class BasicErrorControllerIntegrationTests {
 
 	private ConfigurableApplicationContext context;
-
-	@BeforeClass
-	public static void resetURLStreamHandlerFactory() {
-		URL.setURLStreamHandlerFactory(null);
-	}
 
 	@After
 	public void closeContext() {
