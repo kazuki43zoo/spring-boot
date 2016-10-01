@@ -76,7 +76,7 @@ public class BasicErrorControllerIntegrationTests {
 	private ConfigurableApplicationContext context;
 
 	@BeforeClass
-	public static void resetURLStreamHandlerFactory(){
+	public static void resetURLStreamHandlerFactory() {
 		URL.setURLStreamHandlerFactory(null);
 	}
 
