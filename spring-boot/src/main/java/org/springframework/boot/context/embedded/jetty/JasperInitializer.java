@@ -91,6 +91,15 @@ class JasperInitializer extends AbstractLifeCycle {
 		}
 	}
 
+	protected void doStop() {
+		try {
+			URL.setURLStreamHandlerFactory(null);
+		}
+		catch (Error ex) {
+			// Ignore
+		}
+	}
+
 	private void setExtendedListenerTypes(boolean extended) {
 		try {
 			this.context.getServletContext().setExtendedListenerTypes(extended);
