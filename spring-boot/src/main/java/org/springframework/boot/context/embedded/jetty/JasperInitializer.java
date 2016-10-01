@@ -91,6 +91,7 @@ class JasperInitializer extends AbstractLifeCycle {
 		}
 	}
 
+	@Override
 	protected void doStop() {
 		try {
 			URL.setURLStreamHandlerFactory(null);

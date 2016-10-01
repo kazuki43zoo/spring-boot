@@ -17,6 +17,7 @@
 package org.springframework.boot.autoconfigure.web;
 
 import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,6 +29,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.junit.After;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -72,6 +74,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class BasicErrorControllerIntegrationTests {
 
 	private ConfigurableApplicationContext context;
+
+	@BeforeClass
+	public static void resetURLStreamHandlerFactory(){
+		URL.setURLStreamHandlerFactory(null);
+	}
 
 	@After
 	public void closeContext() {
