@@ -5,11 +5,7 @@ services:
   - mongodb
   - redis
   - cassandra
-sudo: required
+sudo: false
 install: true
-cache:
-  directories:
-     - $HOME/.m2
-
 before_script: travis_wait 45 ./mvnw install -q -U -DskipTests=true -Pfast -Dmaven.test.redirectTestOutputToFile=true
 script: ./mvnw install -q -nsu -Dmaven.test.redirectTestOutputToFile=true -P '!integration'
